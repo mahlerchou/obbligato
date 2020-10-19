@@ -1,5 +1,9 @@
 # Obbligato
-Code generator for wrapping SQL Server strored procedure into OO-like pure ado.net code and RESTful API services.
+Obbligato (Italian pronunciation: [obbliˈɡaːto], also spelled obligato) usually describes a musical line that is in some way indispensable in performance such as piano accompaniment. As a code generator, it generates ADO.NET style C#/API source codes. The Obbligato framework wrapping SQL stored procedure into easy use and easy to debug Object Oriented Model, all we need is to generate code then COPY-PASTE to Visual Studio. 
+
+Before Obbligato, when SQL server stored procedure changes parameters, the client program would even know until runtime, it is dangerous and error prone. Obbligato brings parameter check from runtime to compiling time, this would significant improves code qualitity. Let C# compiler check paramter for you, what can be wrong? 
+
+Enjoy ~ 
 
 ## How to use Obbligato to generate ADO.NET based C# source code?
 * First download latest Obbligato and run.
@@ -13,8 +17,16 @@ An Obbligato header is a comment block that write before first line of stored pr
       OODA_REMARK: The intent of stored procedure that will show in Visual Studio Intelligent Insight.
       OODA_RESULT: VOID
     */
-    CREATE PROCEDURE 
-        
+    CREATE PROCEDURE sp_add
+      @name     nvarchar(50),
+      @age      int
+    AS 
+      INSERT INTO Student (name, age) VALUES (@name, @age)
+
+To execute sp_add in Obbligato way would be: 
+    var p = new sp_add.Param() { "Mahler Chou", 29 };
+    sp_add.execute(p);
+
 ## Obbligato result type - OODA_RESULT
 Obbligato defines three types of stored-procedure based on its executed result. 
 ### VOID type
