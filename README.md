@@ -13,7 +13,7 @@ Enjoy ~
 
 ## Add Obbligato header to stored procedure.
 An Obbligato header is a comment block that write before first line of stored procedure. 
-    /* 
+<pre><code>    /* 
       OODA_REMARK: The intent of stored procedure that will show in Visual Studio Intelligent Insight.
       OODA_RESULT: VOID
     */
@@ -22,11 +22,11 @@ An Obbligato header is a comment block that write before first line of stored pr
       @age      int
     AS 
       INSERT INTO Student (name, age) VALUES (@name, @age)
-
+</pre></code>
 To execute sp_add in Obbligato way would be: 
-    var p = new sp_add.Param() { "Mahler Chou", 29 };
+<pre><code>    var p = new sp_add.Param() { "Mahler Chou", 29 };
     sp_add.execute(p);
-
+</pre></code>
 ## Obbligato result type - OODA_RESULT
 Obbligato defines three types of stored-procedure based on its executed result. 
 ### VOID type
