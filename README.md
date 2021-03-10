@@ -5,6 +5,11 @@ Before Obbligato, when SQL server stored procedure changes parameters, the clien
 
 Enjoy ~ 
 
+## 8.0 Release Feature - Android / .NET Core API / SQL life cycle
+* Generating C# source codes for SQL server stored procedures.
+* Generating .NET CORE API / Controller source codes, no need to do hard coding with micro services.
+* Generating Java data model class (JAR file) for Android, don't even write any GET/POST data classes for Json/Object transformation.
+
 ## How to use Obbligato to generate ADO.NET based C# source code?
 * First download latest Obbligato and run.
 * Create an Obbligato project and connect to SQL Server.
